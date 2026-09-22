@@ -5,7 +5,7 @@ Tags: blog, full-site-editing, block-patterns, custom-colors, custom-logo, custo
 Requires at least: 6.7
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.6265.1511
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,6 +73,21 @@ Register them in the skin_block_styles() function in inc/skin.php and add the CS
 Kerf is a block theme built for the WordPress Site Editor. Page builders that support the block editor work alongside it; legacy drag-and-drop builders that bypass the block system are not supported.
 
 == Changelog ==
+
+= 1.6265.1511 =
+Version numbering switches to the collection-wide scheme (1.Y{DDD}.{HHMM},
+Toronto time) from this release forward, matching the Colophon core and every
+other theme in the line.
+
+* Corrected the Resources section's image-provenance statement: the four demo
+  photographs are AI-generated (FLUX.1 [schnell], Apache 2.0, via Cloudflare
+  Workers AI, prompted and selected by Christopher Ross), not photographed
+  originals as the 1.0.0 text implied. Ownership and GPLv2+ licensing are
+  unaffected; the origin statement is now accurate.
+* Removed the five inherited style variations (Focus, Forest, Midnight, Slate,
+  Warm). They were untouched Colophon-core greys and blues that reverted
+  Kerf's entire warm identity on selection and were never part of this
+  theme's own design — shipping them implied a design choice nobody made.
 
 = 1.0.0 =
 Initial release. Reskinned from the Colophon core with:
@@ -301,26 +316,35 @@ License 1.1 (https://openfontlicense.org/), which is GPL-compatible:
   Files: assets/fonts/ibm-plex-mono/ibm-plex-mono-400.woff2,
   assets/fonts/ibm-plex-mono/ibm-plex-mono-500.woff2
 
-Bundled images — every image in the theme was created for it. None is stock
-photography and none is third-party work; all are Copyright 2026 Christopher
-Ross and licensed GPLv2 or later, the same as the rest of the theme:
+Bundled images — none is stock photography and none is third-party work.
+`placeholder.png` is an original flat-colour PNG. The four demo photographs
+were AI-generated using FLUX.1 [schnell] (Black Forest Labs, Apache License
+2.0 — https://github.com/black-forest-labs/flux/blob/main/model_licenses/LICENSE-FLUX1-schnell)
+via Cloudflare Workers AI, prompted and selected by Christopher Ross. No real
+person, real piece of furniture, or third-party photograph was used as input.
+All five files are Copyright 2026 Christopher Ross and licensed GPLv2 or
+later, the same as the rest of the theme:
 
 * assets/images/placeholder.png — a flat, solid-colour PNG (no photographic or
   third-party content), used only as the default image in the Content Grid and
   Feature Section patterns so an unconfigured block never ships as a bare
   `<img>` with no `src`.
 * assets/images/rescue-collage-1.jpg, rescue-collage-2.jpg,
-  rescue-collage-3.jpg — demo before / in-progress / after photographs of a
-  dresser, used by the Rescue Hero pattern.
-* assets/images/workshop-interior.jpg — a demo close-up of a hand plane in wood
-  shavings, used by the Workshop Intro pattern.
+  rescue-collage-3.jpg — AI-generated demo before / in-progress / after images
+  of a dresser, used by the Rescue Hero pattern. Not a real rescued piece.
+* assets/images/workshop-interior.jpg — an AI-generated demo close-up of a
+  hand plane in wood shavings, used by the Workshop Intro pattern.
 * screenshot.png — a render of the theme's own front page with the demo
   content above.
 
-The four demo photographs and the screenshot are placeholders. They exist so
-the front page is coherent the moment the theme is activated; a live site is
-expected to replace them with photographs of its own work, as each pattern's
-description says.
+The four demo photographs and the screenshot are placeholders, not
+documentation of real work. They exist so the front page is coherent the
+moment the theme is activated. A live site making real before/after or
+funds-raised claims — the theme's own signature feature — is expected to
+replace every one of them with real photographs and real figures, as each
+pattern's description already says. Shipping the AI-generated demo images
+unreplaced on a live site making those specific claims would misrepresent
+the transparency the theme exists to demonstrate.
 
 == License ==
 

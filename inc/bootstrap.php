@@ -44,7 +44,7 @@ define( 'KERF_SLUG', 'kerf' );
  * Theme version — cache-bust for enqueued assets and the WordPress.org version.
  * Keep this in step with the Version header in style.css and Stable tag in readme.txt.
  */
-define( 'KERF_VERSION', '1.0.0' );
+define( 'KERF_VERSION', '1.6265.1511' );
 
 /**
  * Absolute filesystem path to the theme root (no trailing slash).

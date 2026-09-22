@@ -16,6 +16,6 @@
  */
 
 ?>
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|sm"},"color":{"text":"var:preset|color|base-mid"}}} -->
+<!-- wp:paragraph {"textColor":"base-mid","style":{"typography":{"fontSize":"var:preset|font-size|sm"}}} -->
 <p class="has-base-mid-color has-text-color" style="font-size:var(--wp--preset--font-size--sm)"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo esc_html__( 'Home', 'kerf' ); ?></a></p>
 <!-- /wp:paragraph -->

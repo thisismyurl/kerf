@@ -11,7 +11,7 @@
  */
 
 ?>
-<!-- wp:group {"tagName":"footer","className":"kerf-inverted-footer","style":{"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|8","left":"var:preset|spacing|5","right":"var:preset|spacing|5"}},"color":{"background":"var:preset|color|base-black","text":"var:preset|color|base-paper"}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
+<!-- wp:group {"tagName":"footer","className":"kerf-inverted-footer","layout":{"type":"constrained","contentSize":"1200px"},"textColor":"base-paper","backgroundColor":"base-black","style":{"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|8","left":"var:preset|spacing|5","right":"var:preset|spacing|5"}}}} -->
 <footer class="wp-block-group kerf-inverted-footer has-base-paper-color has-base-black-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--8);padding-left:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--5)">
 
 	<!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|7","left":"var:preset|spacing|8"}}}} -->
@@ -23,7 +23,7 @@
 			<h2 class="wp-block-heading has-serif-font-family" style="margin-bottom:var(--wp--preset--spacing--3);font-size:var(--wp--preset--font-size--lg);font-weight:400"><?php echo esc_html__( 'Site Name', 'kerf' ); ?></h2>
 			<!-- /wp:heading -->
 
-			<!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|sm","lineHeight":"1.6"},"color":{"text":"var:preset|color|base-rule"}}} -->
+			<!-- wp:paragraph {"textColor":"base-rule","style":{"typography":{"fontSize":"var:preset|font-size|sm","lineHeight":"1.6"}}} -->
 			<p class="has-base-rule-color has-text-color" style="font-size:var(--wp--preset--font-size--sm);line-height:1.6"><?php echo esc_html__( 'A short tagline that says what this site is about in a single, plain sentence.', 'kerf' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
@@ -31,7 +31,7 @@
 
 		<!-- wp:column -->
 		<div class="wp-block-column">
-			<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"var:preset|font-size|xs","fontWeight":"600","letterSpacing":"0.08em","textTransform":"uppercase"},"spacing":{"margin":{"bottom":"var:preset|spacing|4"}},"color":{"text":"var:preset|color|base-rule"}},"fontFamily":"sans"} -->
+			<!-- wp:heading {"level":3,"textColor":"base-rule","style":{"typography":{"fontSize":"var:preset|font-size|xs","fontWeight":"600","letterSpacing":"0.08em","textTransform":"uppercase"},"spacing":{"margin":{"bottom":"var:preset|spacing|4"}}},"fontFamily":"sans"} -->
 			<h3 class="wp-block-heading has-base-rule-color has-text-color has-sans-font-family" style="margin-bottom:var(--wp--preset--spacing--4);font-size:var(--wp--preset--font-size--xs);font-weight:600;letter-spacing:0.08em;text-transform:uppercase"><?php echo esc_html__( 'Explore', 'kerf' ); ?></h3>
 			<!-- /wp:heading -->
 
@@ -57,11 +57,11 @@
 
 		<!-- wp:column -->
 		<div class="wp-block-column">
-			<!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"var:preset|font-size|xs","fontWeight":"600","letterSpacing":"0.08em","textTransform":"uppercase"},"spacing":{"margin":{"bottom":"var:preset|spacing|4"}},"color":{"text":"var:preset|color|base-rule"}},"fontFamily":"sans"} -->
+			<!-- wp:heading {"level":3,"textColor":"base-rule","style":{"typography":{"fontSize":"var:preset|font-size|xs","fontWeight":"600","letterSpacing":"0.08em","textTransform":"uppercase"},"spacing":{"margin":{"bottom":"var:preset|spacing|4"}}},"fontFamily":"sans"} -->
 			<h3 class="wp-block-heading has-base-rule-color has-text-color has-sans-font-family" style="margin-bottom:var(--wp--preset--spacing--4);font-size:var(--wp--preset--font-size--xs);font-weight:600;letter-spacing:0.08em;text-transform:uppercase"><?php echo esc_html__( 'Contact', 'kerf' ); ?></h3>
 			<!-- /wp:heading -->
 
-			<!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|sm","lineHeight":"1.8"},"color":{"text":"var:preset|color|base-rule"}}} -->
+			<!-- wp:paragraph {"textColor":"base-rule","style":{"typography":{"fontSize":"var:preset|font-size|sm","lineHeight":"1.8"}}} -->
 			<p class="has-base-rule-color has-text-color" style="font-size:var(--wp--preset--font-size--sm);line-height:1.8">hello@example.com<br><?php echo esc_html__( '123 Example Street', 'kerf' ); ?><br><?php echo esc_html__( 'City, Region', 'kerf' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
@@ -74,7 +74,7 @@
 	<hr class="wp-block-separator has-base-ink-background-color has-background" style="margin-top:var(--wp--preset--spacing--7);margin-bottom:var(--wp--preset--spacing--6)"/>
 	<!-- /wp:separator -->
 
-	<!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|xs"},"color":{"text":"var:preset|color|base-rule"}},"fontFamily":"sans"} -->
+	<!-- wp:paragraph {"textColor":"base-rule","style":{"typography":{"fontSize":"var:preset|font-size|xs"}},"fontFamily":"sans"} -->
 	<p class="has-base-rule-color has-text-color has-sans-font-family" style="font-size:var(--wp--preset--font-size--xs)"><?php
 		// The year is computed, not hardcoded — a static "© 2026" in a starter
 		// pattern is wrong every January the site isn't re-edited.

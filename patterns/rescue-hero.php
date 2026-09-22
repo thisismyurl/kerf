@@ -22,12 +22,12 @@
  */
 
 ?>
-<!-- wp:group {"tagName":"section","style":{"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|8"}},"color":{"background":"var:preset|color|base-paper"}},"layout":{"type":"constrained","contentSize":"760px"}} -->
+<!-- wp:group {"tagName":"section","layout":{"type":"constrained","contentSize":"760px"},"backgroundColor":"base-paper","style":{"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|8"}}}} -->
 <section class="wp-block-group has-base-paper-background-color has-background" style="padding-top:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--8)">
 
 	<!-- wp:group {"layout":{"type":"flex","justifyContent":"center"}} -->
 	<div class="wp-block-group">
-		<!-- wp:paragraph {"align":"center","className":"is-style-kerf-eyebrow","style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"var:preset|font-size|xs"},"border":{"radius":"999px","width":"1px","color":"var:preset|color|base-rule"},"spacing":{"padding":{"top":"var:preset|spacing|2","bottom":"var:preset|spacing|2","left":"var:preset|spacing|4","right":"var:preset|spacing|4"}},"color":{"background":"var:preset|color|base-ground"}},"fontFamily":"mono"} -->
+		<!-- wp:paragraph {"align":"center","className":"is-style-kerf-eyebrow","backgroundColor":"base-ground","style":{"typography":{"fontSize":"var:preset|font-size|xs"},"border":{"radius":"999px","width":"1px","color":"var:preset|color|base-rule"},"spacing":{"padding":{"top":"var:preset|spacing|2","bottom":"var:preset|spacing|2","left":"var:preset|spacing|4","right":"var:preset|spacing|4"}}},"fontFamily":"mono"} -->
 		<p class="has-text-align-center is-style-kerf-eyebrow has-base-ground-background-color has-background has-mono-font-family" style="border-color:var(--wp--preset--color--base-rule);border-width:1px;border-radius:999px;padding-top:var(--wp--preset--spacing--2);padding-right:var(--wp--preset--spacing--4);padding-bottom:var(--wp--preset--spacing--2);padding-left:var(--wp--preset--spacing--4);font-size:var(--wp--preset--font-size--xs)"><?php echo esc_html__( 'Solid wood, not laminate — every piece checked by hand', 'kerf' ); ?></p>
 		<!-- /wp:paragraph -->
 	</div>
@@ -37,7 +37,7 @@
 	<h1 class="wp-block-heading has-text-align-center has-serif-font-family" style="margin-top:var(--wp--preset--spacing--5);margin-bottom:var(--wp--preset--spacing--4);font-size:var(--wp--preset--font-size--display);line-height:1.02;letter-spacing:-0.01em"><?php echo esc_html__( 'Give it a second life.', 'kerf' ); ?></h1>
 	<!-- /wp:heading -->
 
-	<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"var:preset|font-size|md"},"color":{"text":"var:preset|color|base-mid"}},"fontFamily":"sans"} -->
+	<!-- wp:paragraph {"align":"center","textColor":"base-mid","style":{"typography":{"fontSize":"var:preset|font-size|md"}},"fontFamily":"sans"} -->
 	<p class="has-text-align-center has-base-mid-color has-text-color has-sans-font-family" style="font-size:var(--wp--preset--font-size--md)"><?php echo esc_html__( 'Furniture rescue and hand refinishing — every sale funds the cause named on the About page.', 'kerf' ); ?></p>
 	<!-- /wp:paragraph -->
 

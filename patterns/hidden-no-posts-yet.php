@@ -14,6 +14,6 @@
  */
 
 ?>
-<!-- wp:paragraph {"style":{"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}},"color":{"text":"var:preset|color|base-mid"}}} -->
+<!-- wp:paragraph {"textColor":"base-mid","style":{"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10"}}}} -->
 <p class="has-base-mid-color has-text-color" style="padding-top:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10)"><?php echo esc_html__( 'Nothing here yet. Publish your first post to begin.', 'kerf' ); ?></p>
 <!-- /wp:paragraph -->

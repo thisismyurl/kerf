@@ -34,7 +34,7 @@
 	}
 
 	/* Kerf is a light-only theme: the warm cream ground is the design.
-	   The Midnight style variation repaints the palette but not the scheme. */
+	   The theme ships no style variations, so this is the only scheme. */
 	:root {
 		color-scheme: light;
 	}

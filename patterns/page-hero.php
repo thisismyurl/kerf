@@ -11,7 +11,7 @@
  */
 
 ?>
-<!-- wp:group {"tagName":"section","style":{"spacing":{"padding":{"top":"var:preset|spacing|12","bottom":"var:preset|spacing|12","left":"var:preset|spacing|5","right":"var:preset|spacing|5"}},"color":{"background":"var:preset|color|base-paper"}},"layout":{"type":"constrained","contentSize":"900px"}} -->
+<!-- wp:group {"tagName":"section","layout":{"type":"constrained","contentSize":"900px"},"backgroundColor":"base-paper","style":{"spacing":{"padding":{"top":"var:preset|spacing|12","bottom":"var:preset|spacing|12","left":"var:preset|spacing|5","right":"var:preset|spacing|5"}}}} -->
 <section class="wp-block-group has-base-paper-background-color has-background" style="padding-top:var(--wp--preset--spacing--12);padding-bottom:var(--wp--preset--spacing--12);padding-left:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--5)">
 
 	<!-- Level 2, not 1: this pattern can land on page-blank.html (a chromeless
@@ -22,7 +22,7 @@
 	<h2 class="wp-block-heading has-serif-font-family" style="margin-bottom:var(--wp--preset--spacing--6);font-size:var(--wp--preset--font-size--display);line-height:1.05;letter-spacing:-0.02em"><?php echo esc_html__( 'A clean foundation for editorial work', 'kerf' ); ?></h2>
 	<!-- /wp:heading -->
 
-	<!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|lg","lineHeight":"1.5"},"spacing":{"margin":{"bottom":"var:preset|spacing|8"}},"color":{"text":"var:preset|color|base-mid"}},"fontFamily":"sans"} -->
+	<!-- wp:paragraph {"textColor":"base-mid","style":{"typography":{"fontSize":"var:preset|font-size|lg","lineHeight":"1.5"},"spacing":{"margin":{"bottom":"var:preset|spacing|8"}}},"fontFamily":"sans"} -->
 	<p class="has-base-mid-color has-text-color has-sans-font-family" style="margin-bottom:var(--wp--preset--spacing--8);font-size:var(--wp--preset--font-size--lg);line-height:1.5"><?php echo esc_html__( 'A minimal, accessible starter theme built for typography, structure, and the words that matter most.', 'kerf' ); ?></p>
 	<!-- /wp:paragraph -->
 

@@ -11,12 +11,12 @@
  */
 
 ?>
-<!-- wp:group {"tagName":"section","style":{"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10","left":"var:preset|spacing|5","right":"var:preset|spacing|5"}},"color":{"background":"var:preset|color|base-paper"}},"layout":{"type":"constrained","contentSize":"720px"}} -->
+<!-- wp:group {"tagName":"section","layout":{"type":"constrained","contentSize":"720px"},"backgroundColor":"base-paper","style":{"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10","left":"var:preset|spacing|5","right":"var:preset|spacing|5"}}}} -->
 <section class="wp-block-group has-base-paper-background-color has-background" style="padding-top:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--5)">
 
 	<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|3"}},"layout":{"type":"default"}} -->
 	<div class="wp-block-group">
-		<!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|xs","letterSpacing":"0.04em","textTransform":"uppercase"},"color":{"text":"var:preset|color|base-mid"}},"fontFamily":"sans"} -->
+		<!-- wp:paragraph {"textColor":"base-mid","style":{"typography":{"fontSize":"var:preset|font-size|xs","letterSpacing":"0.04em","textTransform":"uppercase"}},"fontFamily":"sans"} -->
 		<p class="has-base-mid-color has-text-color has-sans-font-family" style="font-size:var(--wp--preset--font-size--xs);letter-spacing:0.04em;text-transform:uppercase"><?php echo esc_html__( 'January 12, 2026', 'kerf' ); ?></p>
 		<!-- /wp:paragraph -->
 
@@ -24,7 +24,7 @@
 		<h2 class="wp-block-heading has-serif-font-family" style="font-size:var(--wp--preset--font-size--lg)"><a href="#"><?php echo esc_html__( 'The first article title goes here', 'kerf' ); ?></a></h2>
 		<!-- /wp:heading -->
 
-		<!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|sm","lineHeight":"1.6"},"color":{"text":"var:preset|color|base-mid"}}} -->
+		<!-- wp:paragraph {"textColor":"base-mid","style":{"typography":{"fontSize":"var:preset|font-size|sm","lineHeight":"1.6"}}} -->
 		<p class="has-base-mid-color has-text-color" style="font-size:var(--wp--preset--font-size--sm);line-height:1.6"><?php echo esc_html__( 'A short excerpt that gives the reader a sense of the piece before they commit to the full read.', 'kerf' ); ?></p>
 		<!-- /wp:paragraph -->
 	</div>
@@ -36,7 +36,7 @@
 
 	<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|3"}},"layout":{"type":"default"}} -->
 	<div class="wp-block-group">
-		<!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|xs","letterSpacing":"0.04em","textTransform":"uppercase"},"color":{"text":"var:preset|color|base-mid"}},"fontFamily":"sans"} -->
+		<!-- wp:paragraph {"textColor":"base-mid","style":{"typography":{"fontSize":"var:preset|font-size|xs","letterSpacing":"0.04em","textTransform":"uppercase"}},"fontFamily":"sans"} -->
 		<p class="has-base-mid-color has-text-color has-sans-font-family" style="font-size:var(--wp--preset--font-size--xs);letter-spacing:0.04em;text-transform:uppercase"><?php echo esc_html__( 'January 8, 2026', 'kerf' ); ?></p>
 		<!-- /wp:paragraph -->
 
@@ -44,7 +44,7 @@
 		<h2 class="wp-block-heading has-serif-font-family" style="font-size:var(--wp--preset--font-size--lg)"><a href="#"><?php echo esc_html__( 'The second article title goes here', 'kerf' ); ?></a></h2>
 		<!-- /wp:heading -->
 
-		<!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|sm","lineHeight":"1.6"},"color":{"text":"var:preset|color|base-mid"}}} -->
+		<!-- wp:paragraph {"textColor":"base-mid","style":{"typography":{"fontSize":"var:preset|font-size|sm","lineHeight":"1.6"}}} -->
 		<p class="has-base-mid-color has-text-color" style="font-size:var(--wp--preset--font-size--sm);line-height:1.6"><?php echo esc_html__( 'A short excerpt that gives the reader a sense of the piece before they commit to the full read.', 'kerf' ); ?></p>
 		<!-- /wp:paragraph -->
 	</div>
@@ -56,7 +56,7 @@
 
 	<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|3"}},"layout":{"type":"default"}} -->
 	<div class="wp-block-group">
-		<!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|xs","letterSpacing":"0.04em","textTransform":"uppercase"},"color":{"text":"var:preset|color|base-mid"}},"fontFamily":"sans"} -->
+		<!-- wp:paragraph {"textColor":"base-mid","style":{"typography":{"fontSize":"var:preset|font-size|xs","letterSpacing":"0.04em","textTransform":"uppercase"}},"fontFamily":"sans"} -->
 		<p class="has-base-mid-color has-text-color has-sans-font-family" style="font-size:var(--wp--preset--font-size--xs);letter-spacing:0.04em;text-transform:uppercase"><?php echo esc_html__( 'January 3, 2026', 'kerf' ); ?></p>
 		<!-- /wp:paragraph -->
 
@@ -64,7 +64,7 @@
 		<h2 class="wp-block-heading has-serif-font-family" style="font-size:var(--wp--preset--font-size--lg)"><a href="#"><?php echo esc_html__( 'The third article title goes here', 'kerf' ); ?></a></h2>
 		<!-- /wp:heading -->
 
-		<!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|sm","lineHeight":"1.6"},"color":{"text":"var:preset|color|base-mid"}}} -->
+		<!-- wp:paragraph {"textColor":"base-mid","style":{"typography":{"fontSize":"var:preset|font-size|sm","lineHeight":"1.6"}}} -->
 		<p class="has-base-mid-color has-text-color" style="font-size:var(--wp--preset--font-size--sm);line-height:1.6"><?php echo esc_html__( 'A short excerpt that gives the reader a sense of the piece before they commit to the full read.', 'kerf' ); ?></p>
 		<!-- /wp:paragraph -->
 	</div>
@@ -76,7 +76,7 @@
 
 	<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|3"}},"layout":{"type":"default"}} -->
 	<div class="wp-block-group">
-		<!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|xs","letterSpacing":"0.04em","textTransform":"uppercase"},"color":{"text":"var:preset|color|base-mid"}},"fontFamily":"sans"} -->
+		<!-- wp:paragraph {"textColor":"base-mid","style":{"typography":{"fontSize":"var:preset|font-size|xs","letterSpacing":"0.04em","textTransform":"uppercase"}},"fontFamily":"sans"} -->
 		<p class="has-base-mid-color has-text-color has-sans-font-family" style="font-size:var(--wp--preset--font-size--xs);letter-spacing:0.04em;text-transform:uppercase"><?php echo esc_html__( 'December 28, 2025', 'kerf' ); ?></p>
 		<!-- /wp:paragraph -->
 
@@ -84,7 +84,7 @@
 		<h2 class="wp-block-heading has-serif-font-family" style="font-size:var(--wp--preset--font-size--lg)"><a href="#"><?php echo esc_html__( 'The fourth article title goes here', 'kerf' ); ?></a></h2>
 		<!-- /wp:heading -->
 
-		<!-- wp:paragraph {"style":{"typography":{"fontSize":"var:preset|font-size|sm","lineHeight":"1.6"},"color":{"text":"var:preset|color|base-mid"}}} -->
+		<!-- wp:paragraph {"textColor":"base-mid","style":{"typography":{"fontSize":"var:preset|font-size|sm","lineHeight":"1.6"}}} -->
 		<p class="has-base-mid-color has-text-color" style="font-size:var(--wp--preset--font-size--sm);line-height:1.6"><?php echo esc_html__( 'A short excerpt that gives the reader a sense of the piece before they commit to the full read.', 'kerf' ); ?></p>
 		<!-- /wp:paragraph -->
 	</div>

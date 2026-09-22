@@ -66,7 +66,7 @@ Register them in theme.json under settings.typography.fontFamilies, add the font
 
 = How do I add custom block styles? =
 
-Register them in the skin_block_styles() function in inc/skin.php and add the CSS treatment in assets/css/skin.css. The CORE files do not need editing.
+Register them in the kerf_skin_block_styles() function in inc/skin.php and add the CSS treatment in assets/css/skin.css. The CORE files do not need editing.
 
 = Is it compatible with page builders? =
 
@@ -88,6 +88,35 @@ other theme in the line.
   Warm). They were untouched Colophon-core greys and blues that reverted
   Kerf's entire warm identity on selection and were never part of this
   theme's own design — shipping them implied a design choice nobody made.
+
+Corrections made during pre-submission review, before this release was
+distributed anywhere:
+
+* WordPress kebab-cases every preset slug before it becomes a CSS custom
+  property, so the "2xl" and "3xl" font sizes are emitted as
+  --wp--preset--font-size--2-xl and --3-xl. Seven hand-written references
+  used the un-kebabed name and resolved to nothing: theme.json's h1 and h2
+  (every heading on the site fell back to the body size) and the headings in
+  feature-section, hidden-latest-posts-heading, pull-quote, subscribe-cta and
+  workshop-intro. The "var:preset|font-size|2xl" form inside the block
+  comments was always correct — core kebab-cases that one on the way out —
+  which is why the mismatch was invisible in the JSON.
+* 48 blocks declared their colour through style.color.text / style.color.
+  background while the saved HTML carried the preset-class form
+  (has-base-mid-color has-text-color). Core only emits those classes for the
+  textColor / backgroundColor attributes, so the block comment and its markup
+  disagreed and the editor would have flagged every one of them as invalid
+  the first time a pattern was re-saved. The attributes now match the markup
+  that was already there; no visual change.
+* Five paragraphs set style.typography.fontFamily alongside the fontFamily
+  attribute that already produces the class, and one set a font size that was
+  never serialised into the markup. Both were dropped as redundant.
+* assets/css/skin.css still explained the light-only colour scheme by
+  referring to the Midnight style variation, removed earlier in this same
+  release.
+* readme.txt named the block-style registration function as
+  skin_block_styles(); it is kerf_skin_block_styles().
+* languages/kerf.pot still carried Project-Id-Version 1.0.0.
 
 = 1.0.0 =
 Initial release. Reskinned from the Colophon core with:

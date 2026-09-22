@@ -1,0 +1,23 @@
+<!-- Front-page template — Kerf's signature layout, distinct from the generic
+     post index Colophon ships. Composes the rescue-hero, workshop-intro, and
+     where-it-went patterns in the order the design brief specifies.
+
+     Colophon's own core deliberately has NO front-page.html (removed in
+     1.6252.1241 after a WP.org rejection): it always wins over index.html,
+     including under the default "Your latest posts" setting, and a version
+     built around wp:post-content has no post context there, so it shipped
+     blank. This template does not use wp:post-content or any post-context
+     block — every pattern here is static demo content — so it renders
+     correctly whether or not the site owner assigns a static front page.
+     Do not port Colophon's front-page.html removal back onto this file
+     without re-checking that assumption still holds. -->
+
+<!-- wp:template-part {"slug":"header"} /-->
+
+<!-- wp:pattern {"slug":"kerf/rescue-hero"} /-->
+
+<!-- wp:pattern {"slug":"kerf/workshop-intro"} /-->
+
+<!-- wp:pattern {"slug":"kerf/where-it-went"} /-->
+
+<!-- wp:template-part {"slug":"footer"} /-->

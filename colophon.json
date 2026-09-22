@@ -1,0 +1,10 @@
+{
+    "name": "Kerf",
+    "slug": "kerf",
+    "namespace": "kerf",
+    "prefix": "ke",
+    "version": "1.0.0",
+    "colophon_version": "1.6252.1241",
+    "is_core": false,
+    "overrides": []
+}

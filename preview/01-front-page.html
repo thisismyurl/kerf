@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kerf — front page preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Mulish:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --base-black:#14110d; --base-ink:#1c1a16; --base-mid:#6b6153;
+    --base-rule:#e4d6bc; --base-ground:#f5e8d0; --base-paper:#fbf3e4;
+    --base-accent:#b5762c; --base-accent-tint:#f4e3c8;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--base-paper);color:var(--base-ink);font-family:'Mulish',sans-serif;line-height:1.6}
+  .wrap{max-width:960px;margin:0 auto;padding:0 32px}
+  .hero{padding:72px 32px 48px;text-align:center}
+  .eyebrow{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:13px;background:var(--base-ground);border:1px solid var(--base-rule);border-radius:999px;padding:8px 20px;margin-bottom:28px}
+  h1{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:64px;line-height:1.02;letter-spacing:-0.01em;margin:0 0 20px}
+  .sub{font-size:19px;color:var(--base-mid);max-width:520px;margin:0 auto}
+  .collage{display:flex;justify-content:center;align-items:center;gap:0;margin-top:56px}
+  .collage img{border-radius:32px;object-fit:cover;box-shadow:0 20px 40px -12px rgba(20,17,13,0.25)}
+  .collage .side{width:190px;height:253px}
+  .collage .center{width:250px;height:333px;z-index:2;margin:0 -12px}
+  .panel{background:var(--base-ground);border-radius:28px;margin:64px 32px;padding:56px;display:flex;gap:48px;align-items:center}
+  .panel img{width:280px;height:350px;object-fit:cover;border-radius:24px;flex-shrink:0}
+  .panel h2{font-family:'Baloo 2',sans-serif;font-weight:700;font-size:32px;margin:0 0 16px}
+  .panel p{color:var(--base-mid);margin:0 0 20px}
+  .btn{display:inline-block;background:var(--base-black);color:var(--base-paper);font-family:'Mulish',sans-serif;font-weight:700;font-size:14px;padding:14px 28px;border-radius:999px;text-decoration:none}
+  .ledger{max-width:640px;margin:0 auto;padding:56px 32px}
+  .ledger h2{font-family:'Baloo 2',sans-serif;font-size:26px;margin:0 0 20px}
+  .row{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--base-rule)}
+  .row .amt{font-family:'IBM Plex Mono',monospace;color:var(--base-accent)}
+</style>
+</head>
+<body>
+
+  <section class="hero">
+    <span class="eyebrow">Solid wood, not laminate — every piece checked by hand</span>
+    <h1>Give it a second life.</h1>
+    <p class="sub">Furniture rescue and hand refinishing — every sale funds the cause named on the About page.</p>
+    <div class="collage">
+      <img class="side" src="../assets/images/rescue-collage-1.jpg" alt="">
+      <img class="center" src="../assets/images/rescue-collage-2.jpg" alt="">
+      <img class="side" src="../assets/images/rescue-collage-3.jpg" alt="">
+    </div>
+  </section>
+
+  <div class="panel">
+    <img src="../assets/images/workshop-interior.jpg" alt="">
+    <div>
+      <h2>We rescue what still has good bones.</h2>
+      <p>Solid wood furniture headed for the curb gets stripped, repaired, and refinished to the same standard as commercial work. Every sale funds the cause on our About page, named exactly, every time.</p>
+      <a class="btn" href="#">See what's been saved</a>
+    </div>
+  </div>
+
+  <div class="ledger">
+    <h2>Where it went</h2>
+    <div class="row"><span>Maple dresser, drawer boxes intact</span><span class="amt">$140 → cause</span></div>
+    <div class="row"><span>Oak side table, refinished top</span><span class="amt">$65 → cause</span></div>
+  </div>
+
+</body>
+</html>

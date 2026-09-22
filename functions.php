@@ -27,8 +27,11 @@ if ( is_admin() ) {
 	require_once __DIR__ . '/inc/admin.php'; // [CORE] WP.org-compliant Get-started page + welcome notice.
 }
 
-// [CORE] `wp kerf …` commands. Excluded from the WP.org zip by .distignore, so
-// the file_exists() check is load-bearing, not defensive noise.
-if ( defined( 'WP_CLI' ) && WP_CLI && file_exists( __DIR__ . '/inc/cli.php' ) ) {
+// [CORE] WP-CLI commands (`wp {slug} version|info|flush`). inc/cli.php's own
+// docblock has described this exact guard since the file was written, and
+// .distignore already excludes it from the WP.org zip, but functions.php never
+// actually required it — found 2026-09-22 while auditing Kerf and Halyard,
+// where `wp kerf version` / `wp halyard version` simply did not exist.
+if ( defined( 'WP_CLI' ) && \WP_CLI ) {
 	require_once __DIR__ . '/inc/cli.php';
 }

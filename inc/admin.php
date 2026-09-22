@@ -225,7 +225,6 @@ function kerf_get_started_content(): array {
 			esc_html__( '%s is a free, full-site-editing theme built to get out of the way of your content. Here is how to make it yours.', 'kerf' ),
 			$theme
 		),
-
 		/*
 		 * Step titles, the developer-guide label, and the developer-guide text below
 		 * stay bare __() ON PURPOSE. Each is escaped with esc_html() at the point of

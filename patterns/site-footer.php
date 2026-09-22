@@ -2,13 +2,14 @@
 /**
  * Title: Site Footer
  * Slug: kerf/site-footer
- * Categories: colophon
+ * Categories: kerf
  * Viewport Width: 1280
  * Inserter: true
  * Description: Three-column footer with site name and tagline, navigation links, and contact details, closed by a copyright bar.
  *
  * @package kerf
  */
+
 ?>
 <!-- wp:group {"tagName":"footer","className":"kerf-inverted-footer","style":{"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|8","left":"var:preset|spacing|5","right":"var:preset|spacing|5"}},"color":{"background":"var:preset|color|base-black","text":"var:preset|color|base-paper"}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
 <footer class="wp-block-group kerf-inverted-footer has-base-paper-color has-base-black-background-color has-text-color has-background" style="padding-top:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--8);padding-left:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--5)">
@@ -83,7 +84,7 @@
 			esc_html( gmdate( 'Y' ) ),
 			esc_html__( 'Site Name', 'kerf' )
 		);
-	?></p>
+		?></p>
 	<!-- /wp:paragraph -->
 
 </footer>

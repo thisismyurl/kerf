@@ -26,3 +26,9 @@ require_once __DIR__ . '/inc/skin.php';      // [SKIN] this theme's image sizes,
 if ( is_admin() ) {
 	require_once __DIR__ . '/inc/admin.php'; // [CORE] WP.org-compliant Get-started page + welcome notice.
 }
+
+// [CORE] `wp kerf …` commands. Excluded from the WP.org zip by .distignore, so
+// the file_exists() check is load-bearing, not defensive noise.
+if ( defined( 'WP_CLI' ) && WP_CLI && file_exists( __DIR__ . '/inc/cli.php' ) ) {
+	require_once __DIR__ . '/inc/cli.php';
+}

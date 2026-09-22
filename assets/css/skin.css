@@ -1,10 +1,10 @@
 /* =====================================================================
-   [SKIN] skin.css — Colophon's layout, components, and utilities.
+   [SKIN] skin.css — Kerf's layout, components, and utilities.
    ---------------------------------------------------------------------
-   This is the starter skin. Derived themes replace this file entirely
-   with their own design personality. The reset and base sheets are the
-   same for every theme in the Colophon collection; this sheet is what
-   makes Colophon a minimal starter and not a finished product.
+   This sheet is Kerf's personality: the site shell, the eyebrow and band
+   block styles, the rescue-hero collage, and the inverted-footer link
+   colours. The reset and base sheets under core/ are shared, unchanged,
+   across every theme in the Colophon collection.
 
    Architecture: CSS @layers, declared in reset.css. Rules here live in
    the appropriate layer based on their scope:
@@ -33,13 +33,13 @@
 		--wp--style--root--padding-left:   var(--wp--preset--spacing--5);
 	}
 
-	/* Colophon is a light-only theme by default.
-	   Derived themes that support dark mode declare color-scheme: light dark here. */
+	/* Kerf is a light-only theme: the warm cream ground is the design.
+	   The Midnight style variation repaints the palette but not the scheme. */
 	:root {
 		color-scheme: light;
 	}
 
-	/* Bind the semantic focus-ring and skip-link tokens to Colophon's palette */
+	/* Bind the semantic focus-ring and skip-link tokens to Kerf's palette */
 	:root {
 		--cl-focus-ring:         var(--wp--preset--color--base-accent);
 		--cl-focus-ring-inverse: var(--wp--preset--color--base-paper);
@@ -82,6 +82,43 @@
 	   Registered as a block style in skin.php. */
 	.is-style-kerf-band {
 		background-color: var(--wp--preset--color--base-ground);
+	}
+
+	/* Rescue-hero collage (patterns/rescue-hero.php) — three photos reading
+	   before / in progress / after, overlapped so they read as one object.
+	   The overlap lives here rather than as inline block styles so the pattern
+	   markup stays exactly what the image block saves, and so the whole effect
+	   unwinds in one place on a narrow screen. */
+	.kerf-collage-side,
+	.kerf-collage-center {
+		box-shadow: 0 18px 36px rgb(20 17 13 / 18%);
+	}
+
+	.kerf-collage-center {
+		position: relative;
+		z-index: 2;
+		margin-inline: -28px;
+	}
+
+	.kerf-collage-side:first-child {
+		transform: rotate(-3deg);
+	}
+
+	.kerf-collage-side:last-child {
+		transform: rotate(3deg);
+	}
+
+	/* Below the fold of a phone the overlap just crowds; stack them square-on
+	   and let the flex container wrap. */
+	@media (width <= 600px) {
+		.kerf-collage-center {
+			margin-inline: 0;
+		}
+
+		.kerf-collage-side:first-child,
+		.kerf-collage-side:last-child {
+			transform: none;
+		}
 	}
 
 	/* Inverted footer (patterns/site-footer.php) — dark background, so the

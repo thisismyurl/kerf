@@ -22,7 +22,7 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Register the copyright, site-strings and publication-date binding sources.
+ * Register the copyright, site-strings, footer-credit and publication-date sources.
  *
  * Guarded on register_block_bindings_source() so the theme degrades cleanly on
  * any pre-6.5 install that slips past the "Requires at least" header.
@@ -46,6 +46,15 @@ function kerf_register_bindings(): void {
 		array(
 			'label'              => esc_html__( 'Theme strings', 'kerf' ),
 			'get_value_callback' => 'kerf_get_site_string_value',
+			'uses_context'       => array(),
+		)
+	);
+
+	register_block_bindings_source(
+		KERF_SLUG . '/footer-credit',
+		array(
+			'label'              => esc_html__( 'Footer credit', 'kerf' ),
+			'get_value_callback' => 'kerf_get_footer_credit_value',
 			'uses_context'       => array(),
 		)
 	);
@@ -136,6 +145,61 @@ function kerf_get_copyright_value(): string {
 	// stops being noticed.
 	return wp_kses(
 		$copyright,
+		array(
+			'a' => array(
+				'href'   => array(),
+				'rel'    => array(),
+				'target' => array(),
+			),
+		)
+	);
+}
+
+/**
+ * Resolve the footer credit line: "Built with {Theme Name}".
+ *
+ * The theme name and its link both come from the style.css header, so this
+ * file carries no theme-specific string and survives a re-skin untouched.
+ * Returning an empty string from the filter removes the credit entirely —
+ * the paragraph collapses and no template edit is needed.
+ *
+ * @since 1.0.0
+ *
+ * @return string The credit sentence, or an empty string if filtered away.
+ */
+function kerf_get_footer_credit_value(): string {
+	$theme = wp_get_theme();
+	$name  = (string) $theme->get( 'Name' );
+	$uri   = (string) $theme->get( 'ThemeURI' );
+
+	// Linked when style.css declares a Theme URI, plain text when it doesn't —
+	// one translated sentence either way, so translators see one string.
+	$linked_name = $uri
+		? '<a href="' . esc_url( $uri ) . '" rel="nofollow">' . esc_html( $name ) . '</a>'
+		: esc_html( $name );
+
+	$credit = sprintf(
+		/* translators: %s: theme name, linked to the theme's own page when one is set. */
+		esc_html__( 'Built with %s', 'kerf' ),
+		$linked_name
+	);
+
+	/**
+	 * Filters the footer credit sentence.
+	 *
+	 * Return an empty string to drop the credit without editing the footer
+	 * template part.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $credit The composed "Built with {theme}" line.
+	 */
+	$credit = (string) apply_filters( KERF_SLUG . '/footer_credit_text', $credit );
+
+	// Same minimal anchor allow-list as the copyright line above: one filtered
+	// value, one threat model, one answer.
+	return wp_kses(
+		$credit,
 		array(
 			'a' => array(
 				'href'   => array(),

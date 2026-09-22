@@ -41,18 +41,13 @@
 				},
 				{
 					"slug": "base-accent",
-					"color": "#b5762c",
+					"color": "#8d5c1d",
 					"name": "Shellac Amber"
 				},
 				{
 					"slug": "base-accent-tint",
 					"color": "#f4e3c8",
 					"name": "Amber Tint"
-				},
-				{
-					"slug": "base-signal",
-					"color": "#4a5d45",
-					"name": "Sanctuary Green"
 				}
 			],
 			"gradients": []
@@ -207,8 +202,7 @@
 		"custom": {
 			"kerf-light": "#fbf3e4",
 			"kerf-dark": "#14110d",
-			"kerf-accent": "#b5762c",
-			"kerf-button-radius": "999px"
+			"kerf-accent": "#8d5c1d"
 		},
 		"blocks": {
 			"core/navigation": {

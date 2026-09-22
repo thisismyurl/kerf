@@ -2,13 +2,14 @@
 /**
  * Title: Subscribe CTA
  * Slug: kerf/subscribe-cta
- * Categories: colophon
+ * Categories: kerf
  * Viewport Width: 1280
  * Inserter: true
  * Description: Centered call-to-action with a serif heading, short pitch paragraph, and a subscribe button on a tinted background.
  *
  * @package kerf
  */
+
 ?>
 <!-- wp:group {"tagName":"section","style":{"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10","left":"var:preset|spacing|5","right":"var:preset|spacing|5"}},"color":{"background":"var:preset|color|base-accent-tint"}},"layout":{"type":"constrained","contentSize":"640px"}} -->
 <section class="wp-block-group has-base-accent-tint-background-color has-background" style="padding-top:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--5)">

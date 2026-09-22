@@ -5,14 +5,22 @@
  * Categories: kerf
  * Viewport Width: 1280
  * Inserter: true
- * Description: Front-page hero — review badge, a chunky rounded headline, and a three-photo overlapping collage. Signature layout for the theme, adapted from a warm cream/rounded-collage reference (Kerf's own, not a copy of any single brand's copy).
+ * Description: Front-page hero — a review-style badge, a chunky rounded headline, and three overlapping photos reading before, in progress, after.
  *
- * Photography note: the three collage slots MUST be real before/after or
- * workshop photos of an actual rescued piece — see the theme's "never" rule
- * in the pattern description: no stock or generated photography.
+ * The three photos ship as demo images of a donated dresser. Replace them with
+ * your own before/in-progress/after shots of a piece you actually rescued, and
+ * rewrite each alt attribute to describe what your photo shows — the theme's
+ * whole argument is that the proof is real, and stock photography is the one
+ * thing that cannot be.
+ *
+ * The overlap, stacking and shadow are CSS (.kerf-collage-side /
+ * .kerf-collage-center in assets/css/skin.css), not inline styles, so the
+ * markup below is exactly what the image block itself saves and an editor can
+ * re-save the pattern without a block-validation warning.
  *
  * @package kerf
  */
+
 ?>
 <!-- wp:group {"tagName":"section","style":{"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|8"}},"color":{"background":"var:preset|color|base-paper"}},"layout":{"type":"constrained","contentSize":"760px"}} -->
 <section class="wp-block-group has-base-paper-background-color has-background" style="padding-top:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--8)">
@@ -33,19 +41,19 @@
 	<p class="has-text-align-center has-base-mid-color has-text-color has-sans-font-family" style="font-size:var(--wp--preset--font-size--md)"><?php echo esc_html__( 'Furniture rescue and hand refinishing — every sale funds the cause named on the About page.', 'kerf' ); ?></p>
 	<!-- /wp:paragraph -->
 
-	<!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|9"},"blockGap":"0"}},"layout":{"type":"flex","justifyContent":"center","verticalAlignment":"center"}} -->
-	<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--9)">
+	<!-- wp:group {"className":"kerf-collage","style":{"spacing":{"margin":{"top":"var:preset|spacing|9"},"blockGap":"0"}},"layout":{"type":"flex","justifyContent":"center","verticalAlignment":"center"}} -->
+	<div class="wp-block-group kerf-collage" style="margin-top:var(--wp--preset--spacing--9)">
 
-		<!-- wp:image {"aspectRatio":"3/4","width":"200px","style":{"border":{"radius":"32px"},"shadow":"var:preset|shadow|natural"},"className":"kerf-collage-side"} -->
-		<figure class="wp-block-image kerf-collage-side" style="width:200px"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/rescue-collage-1.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Placeholder — replace with a real before photo of a rescued piece', 'kerf' ); ?>" style="aspect-ratio:3/4;object-fit:cover;border-radius:32px"/></figure>
+		<!-- wp:image {"aspectRatio":"3/4","width":"200px","style":{"border":{"radius":"32px"}},"className":"kerf-collage-side"} -->
+		<figure class="wp-block-image kerf-collage-side" style="width:200px"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/rescue-collage-1.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Before: a four-drawer wooden dresser on a driveway, its finish rubbed through along the drawer edges.', 'kerf' ); ?>" style="aspect-ratio:3/4;object-fit:cover;border-radius:32px"/></figure>
 		<!-- /wp:image -->
 
-		<!-- wp:image {"aspectRatio":"3/4","width":"260px","style":{"border":{"radius":"32px"},"shadow":"var:preset|shadow|natural"},"className":"kerf-collage-center"} -->
-		<figure class="wp-block-image kerf-collage-center" style="width:260px;z-index:2"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/rescue-collage-2.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Placeholder — replace with a real workshop-in-progress photo', 'kerf' ); ?>" style="aspect-ratio:3/4;object-fit:cover;border-radius:32px"/></figure>
+		<!-- wp:image {"aspectRatio":"3/4","width":"260px","style":{"border":{"radius":"32px"}},"className":"kerf-collage-center"} -->
+		<figure class="wp-block-image kerf-collage-center" style="width:260px"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/rescue-collage-2.jpg' ) ); ?>" alt="<?php esc_attr_e( 'In progress: the same dresser on a workshop bench, two drawer boxes pulled out and offcuts stacked behind it.', 'kerf' ); ?>" style="aspect-ratio:3/4;object-fit:cover;border-radius:32px"/></figure>
 		<!-- /wp:image -->
 
-		<!-- wp:image {"aspectRatio":"3/4","width":"200px","style":{"border":{"radius":"32px"},"shadow":"var:preset|shadow|natural"},"className":"kerf-collage-side"} -->
-		<figure class="wp-block-image kerf-collage-side" style="width:200px"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/rescue-collage-3.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Placeholder — replace with a real after/finished photo of the same piece', 'kerf' ); ?>" style="aspect-ratio:3/4;object-fit:cover;border-radius:32px"/></figure>
+		<!-- wp:image {"aspectRatio":"3/4","width":"200px","style":{"border":{"radius":"32px"}},"className":"kerf-collage-side"} -->
+		<figure class="wp-block-image kerf-collage-side" style="width:200px"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/rescue-collage-3.jpg' ) ); ?>" alt="<?php esc_attr_e( 'After: the finished dresser in a sunlit room, the refinished top catching the light.', 'kerf' ); ?>" style="aspect-ratio:3/4;object-fit:cover;border-radius:32px"/></figure>
 		<!-- /wp:image -->
 
 	</div>

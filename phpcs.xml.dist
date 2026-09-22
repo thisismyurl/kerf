@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<ruleset name="Kerf">
+	<description>WordPress coding standards for the Kerf theme. Run: phpcs (no arguments).</description>
+
+	<file>.</file>
+
+	<exclude-pattern>/\.git/*</exclude-pattern>
+	<exclude-pattern>/preview/*</exclude-pattern>
+
+	<arg name="extensions" value="php"/>
+	<arg name="colors"/>
+	<arg value="sp"/>
+
+	<rule ref="WordPress">
+		<!--
+		Hook names in this theme line are namespaced with a slash — kerf/setup,
+		kerf/preload_fonts — so a site can tell one theme's hooks from its
+		siblings' at a glance. The sniff wants underscores throughout, which
+		would collapse that distinction. The convention is documented in
+		inc/bootstrap.php and is deliberate.
+		-->
+		<exclude name="WordPress.NamingConventions.ValidHookName"/>
+	</rule>
+
+	<!--
+	Pattern files are block markup with PHP interpolated into it. The sniff
+	wants each opening and closing tag on its own line, which inserts
+	whitespace *inside* the block's saved HTML — enough to make the editor
+	report the pattern as modified when it is re-saved. Readability of the
+	shipped markup wins here.
+	-->
+	<rule ref="Squiz.PHP.EmbeddedPhp">
+		<exclude-pattern>/patterns/*</exclude-pattern>
+	</rule>
+
+	<!--
+	inc/cli.php is a CORE file kept in step by `colophon sync`; renaming it to
+	class-kerf-cli-command.php in this theme alone would break that sync and
+	the .distignore entry that keeps it out of the WordPress.org zip.
+	-->
+	<rule ref="WordPress.Files.FileName.InvalidClassFileName">
+		<exclude-pattern>/inc/cli\.php</exclude-pattern>
+	</rule>
+
+	<config name="minimum_wp_version" value="6.7"/>
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="kerf"/>
+			</property>
+		</properties>
+	</rule>
+</ruleset>

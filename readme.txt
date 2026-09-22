@@ -22,7 +22,7 @@ Kerf is built on the Colophon core: the CORE/SKIN architecture separates portabl
 Features:
 
 * Full Site Editing — every element customisable in the Site Editor
-* System font stack — no external requests; typography uses the visitor's native fonts until you add your own
+* Self-hosted typefaces — Baloo 2, Mulish, and IBM Plex Mono ship with the theme and are served from your own domain; no request ever reaches a font host
 * Built to WCAG 2.2 AA guidelines — visible focus rings, screen-reader utilities, semantic landmark elements
 * RTL-ready — all layout written with CSS logical properties
 * Core Web Vitals optimised — zero render-blocking JavaScript, cascade-ordered CSS, no dead weight
@@ -42,7 +42,7 @@ Every file in inc/ is labelled [CORE] or [SKIN].
 == Installation ==
 
 1. In your WordPress admin, go to Appearance → Themes → Add New.
-2. Search for "Colophon" or upload the theme zip.
+2. Search for "Kerf" or upload the theme zip.
 3. Activate the theme.
 4. Go to Appearance → Kerf: Get started for optional setup steps.
 
@@ -62,7 +62,7 @@ Yes. Kerf is one of the Colophon collection's niche editorial themes — each is
 
 = How do I add my own fonts? =
 
-Register them in theme.json under settings.typography.fontFamilies, add the font files to assets/fonts/, and update inc/skin.php to preload the LCP-critical font via the kerf/preload_fonts filter. No other file needs editing.
+Register them in theme.json under settings.typography.fontFamilies, add the font files to assets/fonts/, and update inc/skin.php to preload the LCP-critical font via the kerf/preload_fonts filter. That filter takes a theme-root-relative path (assets/fonts/family/file.woff2), not a URL — entries containing "://" are dropped so a filter can never trigger an off-origin fetch. No other file needs editing.
 
 = How do I add custom block styles? =
 
@@ -70,7 +70,7 @@ Register them in the skin_block_styles() function in inc/skin.php and add the CS
 
 = Is it compatible with page builders? =
 
-Colophon is a block theme built for the WordPress Site Editor. Page builders that support the block editor work alongside it; legacy drag-and-drop builders that bypass the block system are not supported.
+Kerf is a block theme built for the WordPress Site Editor. Page builders that support the block editor work alongside it; legacy drag-and-drop builders that bypass the block system are not supported.
 
 == Changelog ==
 
@@ -85,9 +85,59 @@ Initial release. Reskinned from the Colophon core with:
   and where-it-went (the transparency-ledger signature feature).
 * Real self-hosted OFL font files (Baloo 2 and Mulish variable, IBM Plex Mono
   400/500 static) replacing the core's system-font fallback.
-* Demo photography is placeholder/generated — see each pattern's alt-text
-  instruction for what a real deployment must replace it with before shipping
-  to a live site claiming real before/after results.
+* Demo photography is placeholder work created for the theme. Each pattern's
+  description says what a real deployment must replace it with before shipping
+  to a live site claiming real before/after results; the alt attributes
+  describe the demo photographs themselves, because alt text is read by
+  visitors, not by the person installing the theme.
+
+Corrections made during pre-submission review, before this release was
+distributed anywhere:
+
+* Six wp:pattern references in templates/ still pointed at the core's
+  `colophon/` pattern namespace rather than `kerf/`, so the 404 message, the
+  404 home link, the "Latest posts" heading on the blog index, and the three
+  no-results messages (index, archive, search) all rendered nothing. The blog
+  index shipped with no h1 as a result. The footer's copyright binding had the
+  same leaked namespace and rendered an empty paragraph.
+* Every pattern in patterns/ declared `Categories: colophon`, a category this
+  theme never registers, so the whole pattern library landed uncategorised in
+  the inserter.
+* `parts/footer.html` bound its credit line to a `footer-credit` block-bindings
+  source that was never registered in any theme in the line. The source now
+  exists (inc/bindings.php), composes "Built with {theme}" from the style.css
+  header, and is removable through the `kerf/footer_credit_text` filter.
+* The LCP font preload was silently dead: inc/skin.php passed a full URL to a
+  filter that takes a theme-root-relative path and drops anything containing
+  "://", so no preload tag was ever emitted.
+* WCAG 1.4.3: the accent (Shellac Amber) was 3.4:1 on paper, 3.1:1 on the
+  ground tone and 3.0:1 on the accent tint — below the 4.5:1 floor everywhere
+  it is used, and it is the global link colour, the ledger figure colour and
+  the button background in two core patterns. Darkened to #8d5c1d, which
+  clears 4.5:1 on all three backgrounds (5.2 / 4.7 / 4.5) and keeps the hue.
+  The focus ring inherits the same token and improves with it.
+* The Rescue Hero collage referenced .kerf-collage-side / .kerf-collage-center
+  classes that no stylesheet defined, so the signature overlapping layout
+  rendered as three plain images in a row. The CSS now exists in skin.css, and
+  the pattern markup no longer carries a hand-written z-index and a shadow
+  attribute the image block does not serialise — both would have tripped a
+  block-validation warning the first time an editor re-saved the pattern.
+* Alt text on all four demo photographs was an instruction to the site owner
+  ("Placeholder — replace with…"), which is what a screen reader would have
+  read aloud on any site that published before swapping the images. It now
+  describes the photographs.
+* The Workshop Intro call-to-action was an anchor with no href: not focusable,
+  not reachable by keyboard. It ships pointing at "#" so it is reachable, and
+  the pattern description says to give it a real destination.
+* readme.txt claimed a system font stack (the theme bundles three families),
+  told users to search WordPress.org for "Colophon", and declared only one of
+  its five bundled resources. All three fixed; the Resources section now
+  declares every font and image with its licence and source.
+* inc/cli.php was never loaded — functions.php had no require for it, despite
+  the file's own docblock and .distignore both describing a guarded load.
+* Removed two dead design tokens added during the reskin: a `base-signal`
+  palette colour used by nothing and absent from all five style variations,
+  and a `kerf-button-radius` custom property no rule referenced.
 
 The CORE history below (1.6252.1241 and earlier) is Kerf's inherited
 foundation, kept for the archaeological record per the collection's own
@@ -238,11 +288,39 @@ See 1.6252.1241 above for the fixes made in response.
 
 == Resources ==
 
-* assets/images/placeholder.png — a flat, solid-colour PNG generated for this
-  theme (no photographic or third-party content), used only as the default
-  image in the Content Grid and Feature Section patterns so an unconfigured
-  block never ships as a bare `<img>` with no `src`. Licensed GPLv2 or later,
-  same as the rest of the theme.
+Bundled fonts — all three are self-hosted WOFF2 subsets under the SIL Open Font
+License 1.1 (https://openfontlicense.org/), which is GPL-compatible:
+
+* Baloo 2 — Copyright Ek Type. Source: https://fonts.google.com/specimen/Baloo+2
+  Files: assets/fonts/baloo-2/baloo-2-variable.woff2
+* Mulish — Copyright Vernon Adams, Cyreal, Jacques Le Bailly.
+  Source: https://fonts.google.com/specimen/Mulish
+  Files: assets/fonts/mulish/mulish-variable.woff2,
+  assets/fonts/mulish/mulish-variable-italic.woff2
+* IBM Plex Mono — Copyright IBM Corp. Source: https://github.com/IBM/plex
+  Files: assets/fonts/ibm-plex-mono/ibm-plex-mono-400.woff2,
+  assets/fonts/ibm-plex-mono/ibm-plex-mono-500.woff2
+
+Bundled images — every image in the theme was created for it. None is stock
+photography and none is third-party work; all are Copyright 2026 Christopher
+Ross and licensed GPLv2 or later, the same as the rest of the theme:
+
+* assets/images/placeholder.png — a flat, solid-colour PNG (no photographic or
+  third-party content), used only as the default image in the Content Grid and
+  Feature Section patterns so an unconfigured block never ships as a bare
+  `<img>` with no `src`.
+* assets/images/rescue-collage-1.jpg, rescue-collage-2.jpg,
+  rescue-collage-3.jpg — demo before / in-progress / after photographs of a
+  dresser, used by the Rescue Hero pattern.
+* assets/images/workshop-interior.jpg — a demo close-up of a hand plane in wood
+  shavings, used by the Workshop Intro pattern.
+* screenshot.png — a render of the theme's own front page with the demo
+  content above.
+
+The four demo photographs and the screenshot are placeholders. They exist so
+the front page is coherent the moment the theme is activated; a live site is
+expected to replace them with photographs of its own work, as each pattern's
+description says.
 
 == License ==
 

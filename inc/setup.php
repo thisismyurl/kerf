@@ -174,4 +174,3 @@ function kerf_comment_form_field_attributes( array $fields ): array {
 	return $fields;
 }
 add_filter( 'comment_form_default_fields', 'kerf_comment_form_field_attributes' );
-

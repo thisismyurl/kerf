@@ -2,13 +2,14 @@
 /**
  * Title: Post List
  * Slug: kerf/post-list
- * Categories: colophon
+ * Categories: kerf
  * Viewport Width: 1280
  * Inserter: true
  * Description: Clean editorial list of four posts, each with a date, serif title, and excerpt, divided by hairline rules.
  *
  * @package kerf
  */
+
 ?>
 <!-- wp:group {"tagName":"section","style":{"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10","left":"var:preset|spacing|5","right":"var:preset|spacing|5"}},"color":{"background":"var:preset|color|base-paper"}},"layout":{"type":"constrained","contentSize":"720px"}} -->
 <section class="wp-block-group has-base-paper-background-color has-background" style="padding-top:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--5)">

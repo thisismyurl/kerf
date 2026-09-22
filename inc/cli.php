@@ -22,7 +22,7 @@ if ( ! ( defined( 'WP_CLI' ) && \WP_CLI ) ) {
 }
 
 /**
- * Colophon: theme operations from the command line.
+ * Kerf: theme operations from the command line.
  */
 class Kerf_CLI_Command {
 

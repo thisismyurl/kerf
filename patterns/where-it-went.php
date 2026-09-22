@@ -9,6 +9,7 @@
  *
  * @package kerf
  */
+
 ?>
 <!-- wp:group {"tagName":"section","style":{"spacing":{"padding":{"top":"var:preset|spacing|8","bottom":"var:preset|spacing|8"}}},"layout":{"type":"constrained","contentSize":"720px"}} -->
 <section class="wp-block-group" style="padding-top:var(--wp--preset--spacing--8);padding-bottom:var(--wp--preset--spacing--8)">
@@ -26,7 +27,10 @@
 			<p class="has-sans-font-family"><?php echo esc_html__( 'Maple dresser, drawer boxes intact', 'kerf' ); ?></p>
 			<!-- /wp:paragraph -->
 			<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|mono"},"color":{"text":"var:preset|color|base-accent"}},"fontFamily":"mono"} -->
-			<p class="has-base-accent-color has-text-color has-mono-font-family"><?php echo esc_html__( '$140 → cause', 'kerf' ); ?></p>
+			<p class="has-base-accent-color has-text-color has-mono-font-family"><?php
+			/* translators: demo ledger figure. $140 is an illustrative sale amount; site owners replace the whole row with their own. Adapt the currency symbol and the arrow to local convention. */
+			echo esc_html__( '$140 → cause', 'kerf' );
+			?></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
@@ -37,7 +41,10 @@
 			<p class="has-sans-font-family"><?php echo esc_html__( 'Oak side table, refinished top', 'kerf' ); ?></p>
 			<!-- /wp:paragraph -->
 			<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|mono"},"color":{"text":"var:preset|color|base-accent"}},"fontFamily":"mono"} -->
-			<p class="has-base-accent-color has-text-color has-mono-font-family"><?php echo esc_html__( '$65 → cause', 'kerf' ); ?></p>
+			<p class="has-base-accent-color has-text-color has-mono-font-family"><?php
+			/* translators: demo ledger figure. $65 is an illustrative sale amount; site owners replace the whole row with their own. Adapt the currency symbol and the arrow to local convention. */
+			echo esc_html__( '$65 → cause', 'kerf' );
+			?></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
@@ -46,7 +53,7 @@
 	<!-- /wp:group -->
 
 	<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|mono","fontSize":"var:preset|font-size|xs"},"color":{"text":"var:preset|color|base-mid"}},"fontFamily":"mono"} -->
-	<p class="has-base-mid-color has-text-color has-mono-font-family" style="font-size:var(--wp--preset--font-size--xs)"><?php echo esc_html__( 'Every figure here is real and dated — replace this demo row with the actual ledger before publishing.', 'kerf' ); ?></p>
+	<p class="has-base-mid-color has-text-color has-mono-font-family" style="font-size:var(--wp--preset--font-size--xs)"><?php echo esc_html__( 'The two rows above are demo content. Replace them with real pieces, real figures and real dates before you publish — a ledger only counts if every line in it is true.', 'kerf' ); ?></p>
 	<!-- /wp:paragraph -->
 
 </section>

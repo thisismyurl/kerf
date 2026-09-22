@@ -2,13 +2,14 @@
 /**
  * Title: Pull Quote
  * Slug: kerf/pull-quote
- * Categories: colophon
+ * Categories: kerf
  * Viewport Width: 1280
  * Inserter: true
  * Description: Centered typographic pull quote in large serif italic with an accent rule and a sans caps attribution.
  *
  * @package kerf
  */
+
 ?>
 <!-- wp:group {"tagName":"section","style":{"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10","left":"var:preset|spacing|5","right":"var:preset|spacing|5"}},"color":{"background":"var:preset|color|base-ground"}},"layout":{"type":"constrained","contentSize":"760px"}} -->
 <section class="wp-block-group has-base-ground-background-color has-background" style="padding-top:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--5)">
